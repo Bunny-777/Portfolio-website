@@ -1,0 +1,106 @@
+*{
+margin:0px;
+border:0px;
+font-family: 'Fuggles', cursive;
+font-family: 'Mooli', sans-serif;
+font-family: 'Skranji', cursive;
+
+}
+
+.main_box{
+    background:url("mini_project.jpg");
+    height:100vh;
+   background-size: cover;
+}
+
+.checkbox{
+    position:fixed;
+    left:-300px;
+    height:100vh;
+    background-color:rgb(158, 196, 240);
+    box-shadow: 2px 4px 2px 1px;
+    width:300px;
+    color: black;
+}
+.list{
+color: black;
+position:absolute;
+top:60px;
+
+}
+
+label{
+display:inline block;
+height: 50px;
+}
+
+.boxno1{
+    display:inline-block;
+}
+.head{
+   
+    display: inline-block;
+    font-size: 25px;
+}
+.borde .boxno2{
+   
+    display:inline-block;
+    left:90%;
+}
+
+.borde{
+    border:3px solid rgb(21, 6, 6);
+    width:100%;
+}
+ li{
+   margin-top:12px;
+}
+i+a{
+    font-size: 20px;
+    color: black;
+
+}
+ul li i{
+    padding-right: 4px;
+}
+
+
+.social_media {
+    padding-top:150px;
+    position: absolute;
+    left: 35%;
+
+} 
+
+.social_media a{
+color: rgb(57, 55, 55);
+}
+
+.main_box .social_media{
+    position: absolute;
+top:89%;
+}
+
+#box1{
+    display:none;
+}
+
+.main_box .checkbox .list ul li:hover{
+border:100%;
+    border: 6px;
+    border-color: aquamarine;
+    box-shadow: 2px 3px 4px 2px;
+}
+
+.checkbox .label:hover{
+    font-size: 15px;
+}
+
+.main_box .checkbox .social_media a i:hover{
+    color:white;
+    transform:scale(2);
+}
+
+.checkbox1:checked~.checkbox{
+left:0;
+}
