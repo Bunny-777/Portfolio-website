@@ -16,6 +16,10 @@ Welcome to the repository of my **Portfolio Website**, a project created to show
 ### 4. **Contact Us**
    - A section for users to reach out to me via a contact form or other provided details.
 
+## Screenshot
+
+![Portfolio Screenshot](Screenshot%202024-12-05%20214314.png)
+
 ## Technologies Used
 
 This website is built using:
