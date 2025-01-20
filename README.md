@@ -37,4 +37,4 @@ You can explore the live version of this portfolio here:
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/Bunny-777/Mini-project.git
+   https://github.com/Bunny-777/Portfolio-website.git
