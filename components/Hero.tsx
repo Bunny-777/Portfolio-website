@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Github, Mail, ChevronDown, User } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
-
+import Image from "next/image";
 export function Hero() {
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -40,7 +40,7 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background text-foreground transition-colors duration-300"
     >
       {/* Background overlay (light/dark adaptive) */}
-      <div className="absolute inset-0 bg-background" />
+      <div className="absolute inset-0 bg-pattern" />
 
       <motion.div
         ref={ref}
@@ -51,10 +51,14 @@ export function Hero() {
       >
         <motion.div variants={itemVariants} className="mb-8 relative">
           <div className="w-48 h-48 mx-auto rounded-full glass glass-hover p-1 mb-6">
-            <div className="w-full h-full rounded-full bg-muted flex items-center justify-center">
-              <div className="w-40 h-40 rounded-full bg-gradient-to-r from-gray-200 to-white dark:from-gray-700 dark:to-gray-900 flex items-center justify-center transition-colors">
-                <User className="w-20 h-20 text-foreground" />
-              </div>
+            <div className="w-full h-full rounded-full bg-muted flex items-center justify-center overflow-hidden">
+              <Image
+                src="/me_in_black.jpg" 
+                alt="Profile"
+                width={192} 
+                height={192}
+                className="object-cover rounded-full"
+              />
             </div>
           </div>
         </motion.div>

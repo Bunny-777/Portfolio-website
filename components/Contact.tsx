@@ -171,7 +171,7 @@ export function Contact() {
 
               <div className="flex justify-center space-x-6">
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/Bunny-777"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -180,7 +180,7 @@ export function Contact() {
                   <Github size={24} />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/bunny777/"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -189,7 +189,7 @@ export function Contact() {
                   <Linkedin size={24} />
                 </motion.a>
                 <motion.a
-                  href="https://twitter.com"
+                  href="https://x.com/bunny__777"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -198,7 +198,7 @@ export function Contact() {
                   <Twitter size={24} />
                 </motion.a>
                 <motion.a
-                  href="mailto:hello@example.com"
+                  href="mailto:bunny202410@gmail.com"
                   whileHover={{ scale: 1.1, y: -2 }}
                   className="p-3 rounded-full glass glass-hover text-gray-400 hover:text-white transition-all duration-300"
                 >
