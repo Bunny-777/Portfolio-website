@@ -38,7 +38,7 @@ export default function SkillsPage() {
 
   const itemVariants = {
     hidden: { x: -60, opacity: 0 },
-    visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+    visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" as any, } },
     exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } }
   };
 
