@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { Github, Mail, ChevronDown, User } from 'lucide-react';
-import { useInView } from 'react-intersection-observer';
-import Link from 'next/link';
+import { motion } from "framer-motion";
+import { Github, Mail, ChevronDown, User } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import Link from "next/link";
 
 export function Hero() {
   const { ref, inView } = useInView({
@@ -29,7 +29,7 @@ export function Hero() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
   };
@@ -46,7 +46,7 @@ export function Hero() {
         ref={ref}
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
+        animate={inView ? "visible" : "hidden"}
         className="relative z-10 text-center max-w-4xl mx-auto px-6"
       >
         <motion.div variants={itemVariants} className="mb-8 relative">
@@ -63,7 +63,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-5xl md:text-7xl font-bold mb-6"
         >
-          Naman Barkiya
+          Bunny
         </motion.h1>
 
         <motion.h2
@@ -93,10 +93,13 @@ export function Hero() {
             <Github size={20} />
             View Projects
           </Link>
-          <button className="px-8 py-3 border rounded-lg font-semibold glass-hover transition-all duration-300 flex items-center gap-2 border-foreground text-foreground">
-            <Mail size={20} />
-            Contact Me
-          </button>
+
+          <Link href="#connect">
+            <button className="px-8 py-3 border rounded-lg font-semibold glass-hover transition-all duration-300 flex items-center gap-2 border-foreground text-foreground">
+              <Mail size={20} />
+              Contact Me
+            </button>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -109,8 +112,8 @@ export function Hero() {
             className="cursor-pointer glass glass-hover p-2 rounded-full text-muted-foreground"
             onClick={() =>
               document
-                .getElementById('skills')
-                ?.scrollIntoView({ behavior: 'smooth' })
+                .getElementById("skills")
+                ?.scrollIntoView({ behavior: "smooth" })
             }
           >
             <ChevronDown size={32} />

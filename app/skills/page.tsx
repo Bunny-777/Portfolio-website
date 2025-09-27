@@ -1,12 +1,11 @@
 'use client';
 
-import { useState } from 'react'; // 🐛 FIXED: Added missing useState import
-import { motion, AnimatePresence } from 'framer-motion'; // ✨ IMPROVEMENT: Added AnimatePresence
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-// --- DATA ---
 const allSkills = [
   { name: 'React', icon: 'R', description: 'Building interactive user interfaces with components, hooks, and modern React patterns.', level: 5, category: 'Frontend' },
   { name: 'Next.js', icon: 'N', description: 'Creating full-stack applications with SSR, API routes, and optimized performance.', level: 5, category: 'Frontend' },
@@ -24,13 +23,8 @@ const allSkills = [
 
 const categories = ['All', 'Frontend', 'Backend', 'Database', 'DevOps', 'Language', 'Tools'];
 
-// --- COMPONENT ---
 export default function SkillsPage() {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredSkills = selectedCategory === 'All'
@@ -39,75 +33,42 @@ export default function SkillsPage() {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
   };
 
   const itemVariants = {
     hidden: { x: -60, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-      },
-    },
-    exit: { // ✨ IMPROVEMENT: Added exit animation for filtering
-      opacity: 0,
-      scale: 0.8,
-      transition: { duration: 0.3 }
-    }
+    visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
+    exit: { opacity: 0, scale: 0.8, transition: { duration: 0.3 } }
   };
 
   return (
-    <main className="min-h-screen bg-black bg-pattern">
+    <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8"
-        >
-          <Link href="/" className="inline-flex items-center text-gray-400 hover:text-white transition-colors duration-300">
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
+          <Link href="/" className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors duration-300">
             <ArrowLeft size={20} className="mr-2" />
             Back to Home
           </Link>
         </motion.div>
 
-        <motion.div
-          initial={{ y: 60, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            All Skills
-          </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+        <motion.div initial={{ y: 60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} className="text-center mb-16">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">All Skills</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Complete overview of my technical expertise and proficiency levels
           </p>
         </motion.div>
 
         {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-4 mb-12"
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
               className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
                 selectedCategory === category
-                  ? 'glass text-white'
-                  : 'text-gray-400 hover:text-white glass-hover'
+                  ? 'glass text-foreground'
+                  : 'text-muted-foreground hover:text-foreground glass-hover'
               }`}
             >
               {category}
@@ -116,44 +77,32 @@ export default function SkillsPage() {
         </motion.div>
 
         {/* Skills Grid */}
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          layout // ✨ IMPROVEMENT: Animates container size changes
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
+        <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={inView ? 'visible' : 'hidden'} layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <AnimatePresence>
             {filteredSkills.map((skill) => (
               <motion.div
-                key={skill.name} // Key is crucial for AnimatePresence
+                key={skill.name}
                 variants={itemVariants}
-                layout // ✨ IMPROVEMENT: Animates position changes
+                layout
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="group p-6 rounded-xl glass glass-hover transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-full glass flex items-center justify-center text-2xl font-bold text-white mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 rounded-full glass flex items-center justify-center text-2xl font-bold text-foreground mb-4 group-hover:scale-110 transition-transform duration-300">
                   {skill.icon}
                 </div>
                 <div className="mb-2">
-                  <span className="text-xs text-gray-500 uppercase tracking-wide">{skill.category}</span>
+                  <span className="text-xs text-muted-foreground uppercase tracking-wide">{skill.category}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gray-200 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {skill.name}
                 </h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  {skill.description}
-                </p>
-                
+                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{skill.description}</p>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
                     <div
                       key={i}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        i < skill.level
-                          ? 'bg-white'
-                          : 'bg-gray-600'
+                        i < skill.level ? 'bg-foreground' : 'bg-muted-foreground'
                       }`}
                     />
                   ))}

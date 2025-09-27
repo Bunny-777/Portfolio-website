@@ -10,7 +10,7 @@ const navItems = [
   { name: "Skills", href: "/skills" },
   { name: "Projects", href: "/projects" },
   { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "#connect" },
 ];
 
 export function Navigation() {
@@ -74,7 +74,7 @@ export function Navigation() {
             transition={{ delay: 0.2 }}
             className="text-2xl font-bold gradient-text"
           >
-            <Link href="/">Naman Barkiya</Link>
+            <Link href="/">Bunny</Link>
           </motion.div>
 
           <div className="hidden md:flex items-center space-x-8">

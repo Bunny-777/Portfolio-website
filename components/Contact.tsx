@@ -55,7 +55,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen py-20 relative bg-pattern">
+    <section id="connect" className="min-h-screen py-20 relative bg-pattern">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ y: 60, opacity: 0 }}
