@@ -8,86 +8,88 @@ import { useState } from 'react';
 
 const allProjects = [
   {
-    title: 'E-Commerce Platform',
+    title: 'Social Media Application',
     description:
-      'A full-stack e-commerce solution built with Next.js, featuring user authentication, payment integration, and admin dashboard.',
-    image: '/api/placeholder/400/250',
-    tags: ['Next.js', 'TypeScript', 'Stripe', 'MongoDB'],
-    github: '#',
+      'A dynamic full-stack social platform built for seamless user interaction, enabling content sharing, real-time engagement, and performance-optimized database management.',
+    image: '/social_media.jpeg',
+    tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
+    github: 'https://github.com/Bunny-777/Social-media-app.git',
     live: '#',
     category: 'Full Stack',
   },
   {
-    title: 'Task Management App',
+    title: 'Fitness Dashboard',
     description:
-      'A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
-    image: '/api/placeholder/400/250',
-    tags: ['React', 'Node.js', 'Socket.io', 'PostgreSQL'],
-    github: '#',
-    live: '#',
-    category: 'Full Stack',
-  },
-  {
-    title: 'Weather Dashboard',
-    description:
-      'A beautiful weather application with location-based forecasts, interactive maps, and personalized weather alerts.',
-    image: '/api/placeholder/400/250',
-    tags: ['React', 'Weather API', 'Chart.js', 'Tailwind'],
-    github: '#',
-    live: '#',
+      'An interactive fitness tracking dashboard designed to monitor daily health metrics including step count, water intake, and calories burned through an intuitive interface.',
+    image: '/fitness_dashboard.jpeg',
+    tags: ['React.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
+    github: 'https://github.com/Bunny-777/Fitness-Dashboard.git',
+    live: 'https://fitness-dashboard-puce.vercel.app/',
     category: 'Frontend',
   },
   {
-    title: 'Social Media API',
+    title: 'School API',
     description:
-      'RESTful API for social media platform with user authentication, posts, comments, and real-time notifications.',
-    image: '/api/placeholder/400/250',
+      'A scalable RESTful API designed for a school management system, featuring secure authentication, role-based access, and real-time data handling with Express and MongoDB.',
+    image: '/school_api.jpeg',
     tags: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Bunny-777/School-api.git',
+    live: 'https://api-d3s3.onrender.com/',
     category: 'Backend',
   },
   {
-    title: 'Portfolio Website',
+    title: 'Trading Dashboard',
     description:
-      'Modern portfolio website with dark/light theme, smooth animations, and responsive design.',
-    image: '/api/placeholder/400/250',
-    tags: ['Next.js', 'Framer Motion', 'Tailwind', 'TypeScript'],
-    github: '#',
-    live: '#',
+      'A real-time trading and portfolio monitoring dashboard with drag-and-drop features, live data visualization, and a clean, responsive interface for traders and analysts.',
+    image: '/trading_dashboard.jpeg',
+    tags: ['React.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
+    github: 'https://github.com/Bunny-777/Trading-dashboard.git',
+    live: 'https://bunnytrades.vercel.app/',
     category: 'Frontend',
   },
   {
     title: 'Chat Application',
     description:
-      'Real-time chat application with private messaging, group chats, and file sharing capabilities.',
-    image: '/api/placeholder/400/250',
+      'A real-time communication platform supporting one-on-one and group chats, built with Socket.io for instant updates and MongoDB for reliable message persistence.',
+    image: '/chat_application.jpeg',
     tags: ['React', 'Socket.io', 'Node.js', 'MongoDB'],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Bunny-777/Basic-Chat-application.git',
+    live: 'https://basic-chat-application-c0pc.onrender.com/',
     category: 'Full Stack',
   },
   {
-    title: 'Blog CMS',
+    title: 'Portfolio Website',
     description:
-      'Content management system for blogs with markdown support, SEO optimization, and analytics dashboard.',
-    image: '/api/placeholder/400/250',
-    tags: ['Next.js', 'Prisma', 'PostgreSQL', 'Tailwind'],
-    github: '#',
-    live: '#',
-    category: 'Full Stack',
+      'A modern and responsive personal portfolio website featuring dark/light mode support, smooth animations, and an elegant design built with Next.js and Framer Motion.',
+    image: '/portfolio.jpeg',
+    tags: ['Next.js', 'Framer Motion', 'Tailwind', 'TypeScript'],
+    github: 'https://github.com/Bunny-777/Portfolio-website.git',
+    live: 'https://bunny-portfolio-gray.vercel.app/',
+    category: 'Frontend',
   },
   {
-    title: 'Expense Tracker',
+    title: 'Admin Dashboard',
     description:
-      'Personal finance management app with budget tracking, expense categorization, and financial insights.',
-    image: '/api/placeholder/400/250',
+      'A personal productivity dashboard used for expense tracking, goal management, and calendar integration, designed with a focus on usability and offline support (PWA).',
+    image: '/admin_dashboard.jpeg',
     tags: ['React', 'Chart.js', 'Local Storage', 'PWA'],
-    github: '#',
-    live: '#',
+    github: 'https://github.com/Bunny-777/Admin-Dashboard.git',
+    live: 'https://admin-dashboard-bunny.vercel.app/',
+    category: 'Frontend',
+  },
+  {
+    title: 'Resume Store',
+    description:
+      'An elegant web platform that allows users to explore and select from a curated collection of professional resume templates tailored to different use cases.',
+    image: '/resume_store.jpeg',
+    tags: ['React.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
+    github: 'https://github.com/Bunny-777/Resume-Store.git',
+    live: 'https://resume-store.vercel.app/',
     category: 'Frontend',
   },
 ];
+
+
 
 const categories = ['All', 'Full Stack', 'Frontend', 'Backend'];
 
@@ -196,9 +198,17 @@ export default function ProjectsPage() {
               className="group relative overflow-hidden rounded-xl glass glass-hover transition-all duration-300"
             >
               <div className="relative overflow-hidden">
-                <div className="w-full h-48 bg-gradient-to-br from-muted to-background flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-                  <Code className="w-16 h-16 text-muted-foreground opacity-70" />
-                </div>
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className="w-full h-48 bg-gradient-to-br from-muted to-background flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                    <Code className="w-16 h-16 text-muted-foreground opacity-70" />
+                  </div>
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
                 <div className="absolute top-4 right-4">
                   <span className="px-2 py-1 text-xs glass text-foreground rounded-full">

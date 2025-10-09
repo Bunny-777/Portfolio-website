@@ -5,18 +5,18 @@ import { useInView } from 'react-intersection-observer';
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'Tech Solutions Inc.',
+    title: 'Full Stack Developer',
+    company: 'Digital Guruji',
     period: '2023 - Present',
-    location: 'Remote',
-    description: 'Leading development of scalable web applications using React, Node.js, and cloud technologies.',
+    location: 'Work from Home',
+    description: 'Leading development of scalable web applications using Next js, Node.js, and cloud technologies.',
     skills: ['React', 'Node.js', 'AWS', 'TypeScript'],
   },
   {
-    title: 'Full Stack Developer',
-    company: 'Digital Innovations',
-    period: '2021 - 2023',
-    location: 'San Francisco, CA',
+    title: 'Designer',
+    company: 'Tenacious',
+    period: '2023 - present',
+    location: 'JSS Noida',
     description: 'Developed and maintained multiple client projects, focusing on performance optimization and user experience.',
     skills: ['Next.js', 'MongoDB', 'Express', 'GraphQL'],
   },
