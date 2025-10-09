@@ -7,9 +7,9 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Modern Portfolio - Full Stack Developer',
+  title: 'Portfolio',
   description:
-    'A modern, animated portfolio showcasing full-stack development skills with beautiful animations and dual theme support.',
+    'Personal portfolio',
 };
 
 export default function RootLayout({
@@ -33,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+

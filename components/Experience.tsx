@@ -18,15 +18,7 @@ const experiences = [
     period: '2023 - present',
     location: 'JSS Noida',
     description: 'Developed and maintained multiple client projects, focusing on performance optimization and user experience.',
-    skills: ['Next.js', 'MongoDB', 'Express', 'GraphQL'],
-  },
-  {
-    title: 'Frontend Developer',
-    company: 'Creative Agency',
-    period: '2020 - 2021',
-    location: 'New York, NY',
-    description: 'Crafted responsive web interfaces and collaborated with design teams to bring creative visions to life.',
-    skills: ['React', 'Sass', 'Figma', 'JavaScript'],
+    skills: ['Figma', 'Photoshop', 'Adobe illustrate', 'Gamma'],
   },
 ];
 
