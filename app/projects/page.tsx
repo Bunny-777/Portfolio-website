@@ -18,6 +18,16 @@ const allProjects = [
     category: 'Full Stack',
   },
   {
+    title: 'Event API',
+    description:
+      'A backend project built using Node.js, Express, and PostgreSQL with Prisma ORM. This API provides a complete event management system where users can create events, register or cancel participation, and view statistics for each event.',
+    image: '/event_api.jpeg',
+    tags: ['Node.js', 'Javascript', 'PostgreSQL', 'POSTMAN'],
+    github: 'https://github.com/Bunny-777/Event-api.git',
+    live: 'https://event-api-89d4.onrender.com/',
+    category: 'Backend',
+  },
+  {
     title: 'Fitness Dashboard',
     description:
       'An interactive fitness tracking dashboard designed to monitor daily health metrics including step count, water intake, and calories burned through an intuitive interface.',
