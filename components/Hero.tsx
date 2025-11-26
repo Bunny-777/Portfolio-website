@@ -81,9 +81,9 @@ export function Hero() {
           variants={itemVariants}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Passionate developer creating innovative web solutions with modern
-          technologies. Specializing in React, Next.js, and building exceptional
-          user experiences.
+          Bunny777 - a full-stack web developer and competitive programmer building
+AI agents, with a strong focus on Machine Learning and NLP.
+
         </motion.p>
 
         <motion.div
