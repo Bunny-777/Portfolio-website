@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bunny777.dev
+
+# Sitemaps
+Sitemap: https://bunny777.dev/sitemap.xml
