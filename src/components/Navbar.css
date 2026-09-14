@@ -1,0 +1,99 @@
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.navbar-pill {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(18, 18, 18, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 100px;
+    padding: 6px 10px;
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav-sep {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 8px;
+    flex-shrink: 0;
+}
+
+.nav-item {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.38);
+    cursor: pointer;
+    transition: color 0.18s ease, background 0.18s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-item svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.nav-item:hover {
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item-active {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tooltip via title attribute is enough — no extra needed */
+
+@media (max-width: 480px) {
+    .navbar {
+        top: 14px;
+    }
+
+    .navbar-pill {
+        padding: 5px 8px;
+        gap: 0;
+    }
+
+    .nav-item {
+        width: 32px;
+        height: 32px;
+    }
+
+    .nav-item svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .nav-sep {
+        margin: 0 6px;
+    }
+}
